@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Data Visualization</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; }
+        pre { background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .output { background: #e8f5e9; padding: 15px; border-left: 4px solid #4caf50; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Employee Performance Analysis</h1>
+    <p><strong>Submitted by:</strong> 22f300016@ds.study.iitm.ac.in</p>
+    
+    <h2>Python Code (Generated with ChatGPT)</h2>
+    <pre><code>#!/usr/bin/env python3
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load employee dataset
+data = {
+    'employee_id': ['EMP001', 'EMP002', 'EMP003', 'EMP004', 'EMP005', 'EMP006', 'EMP007', 'EMP008', 'EMP009', 'EMP010', 'EMP011', 'EMP012', 'EMP013', 'EMP014', 'EMP015', 'EMP016', 'EMP017', 'EMP018', 'EMP019', 'EMP020', 'EMP021', 'EMP022', 'EMP023', 'EMP024', 'EMP025', 'EMP026', 'EMP027', 'EMP028', 'EMP029', 'EMP030', 'EMP031', 'EMP032', 'EMP033', 'EMP034', 'EMP035', 'EMP036', 'EMP037', 'EMP038', 'EMP039', 'EMP040', 'EMP041', 'EMP042', 'EMP043', 'EMP044', 'EMP045', 'EMP046', 'EMP047', 'EMP048', 'EMP049', 'EMP050', 'EMP051', 'EMP052', 'EMP053', 'EMP054', 'EMP055', 'EMP056', 'EMP057', 'EMP058', 'EMP059', 'EMP060', 'EMP061', 'EMP062', 'EMP063', 'EMP064', 'EMP065', 'EMP066', 'EMP067', 'EMP068', 'EMP069', 'EMP070', 'EMP071', 'EMP072', 'EMP073', 'EMP074', 'EMP075', 'EMP076', 'EMP077', 'EMP078', 'EMP079', 'EMP080', 'EMP081', 'EMP082', 'EMP083', 'EMP084', 'EMP085', 'EMP086', 'EMP087', 'EMP088', 'EMP089', 'EMP090', 'EMP091', 'EMP092', 'EMP093', 'EMP094', 'EMP095', 'EMP096', 'EMP097', 'EMP098', 'EMP099', 'EMP100'],
+    'department': ['Sales', 'Marketing', 'Sales', 'Marketing', 'Marketing', 'R&D', 'Sales', 'HR', 'HR', 'Finance', 'Operations', 'R&D', 'Operations', 'IT', 'Marketing', 'Finance', 'Finance', 'HR', 'HR', 'Finance', 'R&D', 'Sales', 'Marketing', 'Sales', 'HR', 'Sales', 'IT', 'Sales', 'HR', 'HR', 'HR', 'Finance', 'Sales', 'IT', 'HR', 'IT', 'Operations', 'Sales', 'Sales', 'Operations', 'Finance', 'R&D', 'Finance', 'Marketing', 'Marketing', 'HR', 'Operations', 'HR', 'Sales', 'Operations', 'Finance', 'Operations', 'HR', 'HR', 'HR', 'Marketing', 'Marketing', 'HR', 'Marketing', 'Marketing', 'HR', 'Finance', 'Finance', 'Sales', 'IT', 'Sales', 'Marketing', 'HR', 'IT', 'Sales', 'Operations', 'Sales', 'HR', 'Marketing', 'R&D', 'Finance', 'HR', 'IT', 'IT', 'HR', 'Operations', 'Sales', 'R&D', 'Marketing', 'Marketing', 'Sales', 'Operations', 'Operations', 'R&D', 'Finance', 'Finance', 'HR', 'Sales', 'Operations', 'Sales', 'Operations', 'IT', 'Operations', 'Finance', 'Finance'],
+    'performance_score': [79.56, 93.05, 84.66, 79.08, 78.83, 76.32, 92.65, 61.89, 88.79, 75.07, 67.02, 65.17, 82.38, 75.19, 69.31, 79.47, 82.99, 65.04, 88.44, 65.2, 60.11, 83.5, 73.9, 86.16, 60.17, 64.64, 71.59, 90.2, 67.83, 74.12, 75.96, 86.72, 72.85, 63.76, 80.43, 74.04, 63.14, 80.56, 87.13, 77.66, 81.67, 68.22, 93.26, 65.71, 61.5, 70.08, 69.98, 76.9, 86.12, 87.34, 73.63, 91.83, 70.61, 67.91, 61.86, 68.16, 63.59, 88.35, 81.71, 91.36, 93.58, 64.34, 67.95, 83.26, 63.39, 84.18, 60.43, 90.37, 67.55, 90.04, 88.1, 76.14, 82.87, 64.09, 81, 89.42, 83.79, 71.21, 86.14, 72.77, 69.48, 60.05, 93.23, 81.53, 89.45, 66.99, 88.35, 65.18, 86.32, 90.11, 64.96, 68.94, 94.68, 62.23, 60.08, 76.79, 70.66, 75.13, 62.6, 78.01]
+}
+
+df = pd.DataFrame(data)
+
+# Calculate frequency for R&D department
+count = len(df[df['department'] == 'R&D'])
+print(f"Frequency count for R&D: {count}")
+
+# Create histogram
+plt.figure(figsize=(10, 6))
+sns.countplot(data=df, x='department', palette='viridis')
+plt.title('Employee Distribution by Department')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('histogram.png')
+</code></pre>
+    
+    <div class="output">
+        <h2>Output</h2>
+        <p><strong>Frequency count for R&D: 7</strong></p>
+    </div>
+</body>
+</html>
